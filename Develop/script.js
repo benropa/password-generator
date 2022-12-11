@@ -24,25 +24,25 @@ const usernum = Number(window.prompt("How many characters would you like your pa
 
 // 2. Ask user what characters types they would like to include in their generated password.
   // Ask user if their password should include lowercase letters.
-      var ynlower = window.confirm("Click OK to confirm you would like lowercase letters in your password.");
+      var ynlower = window.confirm("Click 'OK' if would like to include lowercase letters in your password. Click 'Cancel' if you do not want to include lowercase letters.");
       console.log(ynlower);
       if(ynlower == true) { selections = selections.concat(lowerCase);}
   // Ask user if their password should include UPPERcase letters.
-      var ynupper = window.confirm("Click OK to confirm you would like uppercase letters in your password.");
+      var ynupper = window.confirm("Click 'OK' if would like to include upppercase letters in your password. Click 'Cancel' if you do not want to include uppercase letters.");
       console.log(ynupper);
       if(ynupper == true) { selections = selections.concat(upperCase);}
   // Ask user if their password should contain special characters.
-      var ynspecs = window.confirm("Click OK to confirm you would like special characters in your password.");
+      var ynspecs = window.confirm("Click 'OK' if would like to include special characters in your password. Click 'Cancel' if you do not want to include special characters letters.");
       console.log(ynspecs);
       if(ynspecs == true) { selections = selections.concat(specChars);}
    // Ask user if their password should contain numbers.
-      var ynnum = window.confirm("Click OK to confirm you would like numbers in your password.");
+      var ynnum = window.confirm("Click 'OK' if would like to include numbers in your password. Click 'Cancel' if you do not like to include numbers.");
       console.log(ynnum);
       if(ynnum == true) { selections = selections.concat(numbers);}
     // Make sure user selects at least one type of character.
-      if (ynlower == false && ynupper == false && ynspecs == false && ysnum == false) {
-        alert("You must select one or more sets of variables to generate a password.")
-        return "You must select one or more sets of variables to generate a passoword. Please try again."
+      if (ynlower == false && ynupper == false && ynspecs == false && ynnum == false) {
+        alert("You must select one or more sets of characters to generate a password.")
+        return "You must select one or more sets of characters to generate a passoword. Please try again."
       }
 // 3. Validate inputs and begin process of generating a password with user selected characters.
 
@@ -56,13 +56,13 @@ const usernum = Number(window.prompt("How many characters would you like your pa
         return generatePassword;
     };
 
-  var generateBtn = document.querySelector("#generate");
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+    var generateBtn = document.querySelector("#generate");
+    // Write password to the #password input
+    function writePassword() {
+      var password = generatePassword();
+      var passwordText = document.querySelector("#password");
 
-   passwordText.value = password;
+    passwordText.value = password;
 }
 
   // Add event listener to generate button
