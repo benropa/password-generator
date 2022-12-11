@@ -22,8 +22,10 @@ function generatePassword() {
 const usernum = Number(window.prompt("How many characters would you like your password to contain? Please enter in a number between 8 and 128.", ""));
     if (usernum < 8) {
       alert("Please enter a number between 8 and 128.");
+      return "Please try again."
     } else if (usernum > 128) {
       alert("Please enter a number between 8 and 128.");
+      return "Please try again."
     } else if (isNaN(usernum)) {
       alert("Please enter a number between 8 and 128.");
       return "Please try again."
@@ -32,16 +34,16 @@ const usernum = Number(window.prompt("How many characters would you like your pa
 // 2. Ask user what characters types they would like to include in their generated password.
       var lowerCase = window.confirm("Click OK to confirm you would like lowercase letters in your password.");
       console.log(lowerCase);
-      if(lowerCase == true) { selections = selections+=(lowerCase);}
+      if(lowerCase == true) { selections = selections.concat(lowerCase);}
       var upperCase = window.confirm("Click OK to confirm you would like uppercase letters in your password.");
       console.log(upperCase);
-      if(upperCase == true) { selections = selections+=(upperCase);}
+      if(upperCase == true) { selections = selections.concat(upperCase);}
       var specChars = window.confirm("Click OK to confirm you would like special characters in your password.");
       console.log(specChars);
-      if(specChars == true) { selections = selections+=(specChars);}
+      if(specChars == true) { selections = selections.concat(specChars);}
       var numbers = window.confirm("Click OK to confirm you would like numbers in your password.");
       console.log(numbers);
-      if(numbers == true) { selections = selections+=(numbers);}
+      if(numbers == true) { selections = selections.concat(numbers);}
 
       if (lowerCase == false && upperCase == false && specChars == false && numbers == false) {
         alert("You must select one or more sets of variables to generate a password.")
