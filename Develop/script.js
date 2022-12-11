@@ -9,14 +9,13 @@
 // var letteroptions = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+var selections = [];
 var specChars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "-", "_", "/", "?", "<", ">", ".", ",", "[", "]", "{", "}", ":", ";", "~", "`"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 function generatePassword() {
-  var selections = [];
   console.log("Hey! You clicked the button.")
 // 1. Ask user how many characters their password needs to contain. (between 8 - 128)
     // Validate user answer and make sure their answer falls within guidelines.
@@ -44,25 +43,25 @@ const usernum = Number(window.prompt("How many characters would you like your pa
       console.log(numbers);
       if(numbers == true) { selections = selections.concat(numbers);}
 
-      if (lowerCase == false && upperCase == false && specChars == false && numbers == false) 
+      if (lowerCase == false && upperCase == false && specChars == false && numbers == false) {
         alert("You must select one or more sets of variables to generate a password.")
         return "You must select one or more sets of variables to generate a passoword. Please try again."
+      }
+// 3. Validate inputs and begin process of generating a password with user selected characters.
 
+      var password = [];
+      for (var i = 0; i < usernum; i++) {
+        var setup;
+        password.push(selections[Math.floor(Math.random() * selections.length)]);
+      }
+
+      const generatePassword = password.join("");
+        return generatePassword;
       
-    }
-  
-// const response1 = confirm("would you like your password to contain lowercase leters?");
-// console.log(re)12
-
-  // lowercase, uppercase, numbers, and spec characters.
-// 2. validate the input, make sure that one or more character types are being selected.
-// 3. Display the generated password on page.
-
-  // 
-  // aNumber = alphabet
-// 4. return generated password.
+    };
 
 
+var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
