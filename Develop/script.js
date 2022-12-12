@@ -42,7 +42,7 @@ const usernum = Number(window.prompt("How many characters would you like your pa
     // Make sure user selects at least one type of character.
       if (ynlower == false && ynupper == false && ynspecs == false && ynnum == false) {
         alert("You must select one or more sets of characters to generate a password.")
-        return "You must select one or more sets of characters to generate a passoword. Please try again."
+        return "You must select one or more sets of characters to generate a password. Please try again."
       }
 // 3. Validate inputs and begin process of generating a password with user selected characters.
 
