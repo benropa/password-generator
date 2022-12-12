@@ -6,3 +6,7 @@ This program allows the user to generate a password using a randomization of cha
 ## Links
 https://benropa.github.io/password-generator/
 
+## Screenshot
+![Screenshot 2022-12-12 at 3 08 48 PM](https://user-images.githubusercontent.com/117046452/207154920-a25c8d5d-890e-449b-89fc-5dd0f2cc0f82.png)
+
+
